@@ -19,4 +19,8 @@ The application of UVGI to sterilization has been an accepted practice since the
 ==Water purification==
 
 Water purification via UVGI is used in most water sterilization processes, such as purification, detoxification and disinfection. Its use in wastewater treatment is replacing chlorination due to that chemical’s toxic by-products. A disadvantage is that water treated by chlorination is resistant to reinfection, where UVGI water must be transported and delivered in such a way as to avoid contamination. Individual wastestreams to be treated by UVGI must be tested to ensure that the method will be effective due to potential interferences such as suspended solids, dyes or other substances that may block or absorb the UV radiation.
+
+= References =
+
+[http://www.heraeus-noblelight.com/en/uv-disinfection-oxidation/information-for-disinfection-and-oxidation/services-and-events/emission-spectra-of-germicidal-lamps.html Emission spectra of germicidal lamps]
  

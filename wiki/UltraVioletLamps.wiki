@@ -1,8 +1,8 @@
 #summary Ultra-violet lamps and applications
 
-= Introduction =
 
-reference: [http://en.wikipedia.org/wiki/Ultraviolet_germicidal_irradiation wikipedia]
+
+reference: 
 
 Ultraviolet Germicidal Irradiation (UVGI) is a sterilization method that uses ultraviolet (UV) light at sufficiently short wavelength to break down micro-organisms. It is used in a variety of applications, such as food, air and water purification. UV has been a known mutagen at the cellular level for more than 100 years. The 1903 Nobel Prize for Medicine was awarded to Niels Finsen for his use of UV against tuberculosis.[1]
 
@@ -21,6 +21,8 @@ The application of UVGI to sterilization has been an accepted practice since the
 Water purification via UVGI is used in most water sterilization processes, such as purification, detoxification and disinfection. Its use in wastewater treatment is replacing chlorination due to that chemical’s toxic by-products. A disadvantage is that water treated by chlorination is resistant to reinfection, where UVGI water must be transported and delivered in such a way as to avoid contamination. Individual wastestreams to be treated by UVGI must be tested to ensure that the method will be effective due to potential interferences such as suspended solids, dyes or other substances that may block or absorb the UV radiation.
 
 = References =
+
+[http://en.wikipedia.org/wiki/Ultraviolet_germicidal_irradiation Ultraviolet germicidal irradiation]
 
 [http://www.heraeus-noblelight.com/en/uv-disinfection-oxidation/information-for-disinfection-and-oxidation/services-and-events/emission-spectra-of-germicidal-lamps.html Emission spectra of germicidal lamps]
  

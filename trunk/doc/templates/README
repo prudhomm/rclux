@@ -1,0 +1,14 @@
+###  README --- /home/prudhomm/Devel/Projects/rclux/doc/templates/
+
+## Copyright 2007 Christophe Prud'homme
+##
+## Author: christophe.prudhomme@ujf-grenoble.fr
+## Keywords:
+
+
+To compile the template report report.tex, type
+
+make
+
+make sure that ../scripts/makeglossaries is executable and that you
+have perl installed and operational

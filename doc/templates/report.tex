@@ -1,0 +1,109 @@
+% -*- encoding: iso-latin-1 -*-
+
+\documentclass{report}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{makeidx}
+\makeindex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Glossaries
+\usepackage[toc,section,acronym]{glossaries}
+\newglossary{notation}{not}{ntn}{Notation}
+\newglossaryentry{a}{name=$a$,description={Velocity of sound ($m/s$)},type=notation}
+
+\newglossaryentry{singmtx}{name=Singular Matrix,
+  description=A matrix with a zero determinant,
+  first=singular matrix (SM),
+  text=SM,
+  firstplural=singular matrices (SMs)}
+\newacronym{uv}{UV}{Ultra-Violet}
+\newacronym{ujf}{UJF}{Université Joseph Fourier Grenoble 1}
+
+\makeglossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Titre}
+
+\author{Auteur}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\listoftables
+
+\listoffigures
+
+\chapter{Introduction}
+\label{cha:introduction}
+
+the keywords are \gls{uv}\index{Ultra-Violet} lamps\index{Ultra-Violet!lamp} irradiation\index{Ultra-Violet!irradiation}
+
+use acronym \gls{ujf}
+
+the speed of sound \gls{a}
+
+\chapter{Modélisation}
+\label{cha:modelisation}
+
+\chapter{Méthodes numériques}
+\label{cha:methodes-numeriques}
+
+
+\chapter{Résultats numériques}
+\label{cha:resultats-numeriques}
+
+
+
+
+\appendix
+
+\chapter{Rappel de calcul vectoriel}
+\label{cha:rappel-de-calcul}
+
+blah blah
+
+\chapter{Glossaries}
+\label{cha:glossaries}
+
+
+%% print the glossaries
+\glossarystyle{list}
+\printglossaries
+
+%% print the index
+\printindex
+
+%% the next command allows to print _ALL_ references: you may not want
+%% that in your report but rather have only the references you cited
+\nocite{*}
+
+
+\bibliographystyle{plain}
+\bibliography{../biblio/rclux}
+
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-parse-self: t
+%%% x-symbol-8bits: nil
+%%% TeX-auto-regexp-list: TeX-auto-full-regexp-list
+%%% TeX-master: t
+%%% ispell-local-dictionary: "french"
+%%% End:

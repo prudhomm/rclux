@@ -15,7 +15,7 @@ L=[20*1e-3, 118*1e-3, 50*1e-3];
 D = x(1:3)';
 L(2) = x(4);
 % Q = x(5);
-Pin = x(6);
+Pin = x(5);
 
 % pressure drop
 prssDrop = Pin - Pout;
@@ -29,13 +29,15 @@ S = (pi.*(D.^2))./4;
 
 %   pipes and fittings
 % p_f = ( sum(F.*L./D)+ Ke(D(1),D(2))+ Kc(D(2),D(3),pi)); 
-v = computeV(epsilon, L, D, prssDrop, rho, nu, v0) ;
+[v, swamee] = computeV(epsilon, L, D, prssDrop, rho, nu, v0) ;
 %   The equation can also be written in terms of pressure loss:
 % v = sqrt((2*Deltap)/ (rho*p_f));
 %   time required to pass through the pipe
 %   we consider the opposite so we maximise instead of minimising
 t = -L(2) / v;
-x(5) = v*S(3);
+% x(5) = v*S(3);
+pDrop = 0.5*swamee*rho*(v^2)
+
 % dtdD1 = L(2)*sqrt(rho)*(evalTermR(Reynolds(1)) + 4*D(1)*(D(1)^2 - D(2)^2)/D(2)^4) / sqrt((2*Deltap))/2/sqrt(p_f);
 % dtdD2 = L(2)*sqrt(rho)*(evalTermR(Reynolds(2)) - 4*(D(1)^2 - D(2)^2)/D(2)^5 + 0.5*(1/D(3) + D(3)/D(2)^2)) / sqrt((2*Deltap))/2/sqrt(p_f);
 % dtdD3 = L(2)*sqrt(rho)*(evalTermR(Reynolds(3)) + 0.5*(D(2)/D(3)^2 + 1/D(2))) / sqrt((2*Deltap))/2/sqrt(p_f);

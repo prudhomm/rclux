@@ -1,0 +1,42 @@
+real L1=20*1e-3,L2=118*1e-3,L3=50*1e-3; // the length of the semimajor axis and semiminor axis
+real r1 = 0.002,r2=0.005;
+int inout = 10;
+int inside = 30;
+
+border Gamma1(t=0,L1) { x = t; y = -r1; }
+border Gamma2(t=-r1,-r2) { x = L1; y = t; }
+border Gamma3(t=L1,L1+L2) { x = t; y = -r2; }
+border Gamma4(t=-r2,-r1) { x = L1+L2; y = t; }
+border Gamma5(t=L1+L2,L1+L2+L3) { x = t; y = -r1; }
+border Gamma6(t=-r1,r1) { x = L1+L2+L3; y = t; }
+border Gamma7(t=L1+L2+L3,L1+L2) { x = t; y = r1; }
+border Gamma8(t=r1,r2) { x = L1+L2; y = t; }
+border Gamma9(t=L1+L2,L1) { x = t; y = r2; }
+border Gamma10(t=r2,r1) { x = L1; y = t; }
+border Gamma11(t=L1,0) { x = t; y = 0.0020; }
+border Gamma12(t=r1,-r1) { x = 0; y = t; }
+
+mesh Th=buildmesh(Gamma1(inout)+Gamma2(inout)+Gamma3(inside)+Gamma4(inout)
++Gamma5(inout)+Gamma6(inout)+Gamma7(inout)+Gamma8(inout)
++Gamma9(inside)+Gamma10(inout)+Gamma11(inout)+Gamma12(inout));
+
+plot(Th,wait=true, ps="steriliser2DTh.eps"); // Plot Th
+
+fespace Xh(Th,P2); // definition of the velocity component space
+fespace Mh(Th,P1); // definition of the pressure space
+Xh u2,v2;
+Xh u1,v1;
+Mh p,q;
+
+solve Stokes (u1,u2,p,v1,v2,q,solver=Crout) =
+int2d(Th)( ( dx(u1)*dx(v1) + dy(u1)*dy(v1)
++ dx(u2)*dx(v2) + dy(u2)*dy(v2) )
+- p*q*(0.000001)
+- p*dx(v1) - p*dy(v2)
+- dx(u1)*q - dy(u2)*q
+)
++ on(6,12,p=0)
++ on(5,6,7,u1=10.6,u2=0)
++ on(1,11,12,u1=1,u2=0)
+; 
+plot(u1,u2,wait=true, ps="steriliser2D.eps"); // Plot celerity

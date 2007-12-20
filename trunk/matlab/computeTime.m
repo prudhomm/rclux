@@ -4,7 +4,7 @@ function t = computeTime(x)
 
 % constants
 % g=9.81;
-Pout= 1;
+Pout= 101325;% Pa
 rho=998.2;
 mu=0.001003;
 nu=mu/rho;
@@ -36,7 +36,7 @@ S = (pi.*(D.^2))./4;
 %   we consider the opposite so we maximise instead of minimising
 t = -L(2) / v;
 % x(5) = v*S(3);
-pDrop = 0.5*swamee*rho*(v^2)
+%pDrop = 0.5*swamee*rho*(v^2)
 
 % dtdD1 = L(2)*sqrt(rho)*(evalTermR(Reynolds(1)) + 4*D(1)*(D(1)^2 - D(2)^2)/D(2)^4) / sqrt((2*Deltap))/2/sqrt(p_f);
 % dtdD2 = L(2)*sqrt(rho)*(evalTermR(Reynolds(2)) - 4*(D(1)^2 - D(2)^2)/D(2)^5 + 0.5*(1/D(3) + D(3)/D(2)^2)) / sqrt((2*Deltap))/2/sqrt(p_f);

@@ -1,0 +1,17 @@
+D=[4*1e-3 , 10*1e-3 , 4*1e-3];
+x0 = 0.5*D(2);
+% x0(3) = 2;
+lb = [0.002;0.002];
+ub = [0.008;0.008;];
+% [x,t,exitflag,output] = fmincon(@func,x0,[],[],[],[],[],[],@mycon)
+[x,t,exitflag,output] = fmincon(@func,x0,[],[],[],[],lb,ub,@mycon)
+
+%%
+
+r = 4*1e-3:0.0002:8*1e-3;
+s = size(r,2);
+v = zeros
+for i = 1:s
+    v(i) = computeV();
+end
+plot(r,v)

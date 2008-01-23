@@ -4,6 +4,7 @@ function t = computeTime(x)
 
 % constants
 % g=9.81;
+Pin = 2e5;
 Pout= 101325;% Pa
 rho=998.2;
 mu=0.001003;
@@ -11,17 +12,18 @@ nu=mu/rho;
 v0 = 1;
 epsilon = 1e-6*ones(1,3);
 L=[20*1e-3, 118*1e-3, 50*1e-3]; 
-
-D = x(1:3)';
-L(2) = x(4);
+D=[4*1e-3 , 10*1e-3 , 4*1e-3];
+Diam = D;
+Diam(1:2) = 2*x(1:2)';
+% L(2) = x(4);
 % Q = x(5);
-Pin = x(5);
+% Pin = x(5);
 
 % pressure drop
 prssDrop = Pin - Pout;
 
 %   sections of the pipes
-S = (pi.*(D.^2))./4;
+% S = (pi.*(D.^2))./4;
 %   Average velocity in each pipe
 % V=Q./S;
 % Reynolds = Re(V,D,nu);
@@ -29,7 +31,7 @@ S = (pi.*(D.^2))./4;
 
 %   pipes and fittings
 % p_f = ( sum(F.*L./D)+ Ke(D(1),D(2))+ Kc(D(2),D(3),pi)); 
-[v, swamee] = computeV(epsilon, L, D, prssDrop, rho, nu, v0) ;
+[v, swamee] = computeV(epsilon, L, Diam, prssDrop, rho, nu, v0) ;
 %   The equation can also be written in terms of pressure loss:
 % v = sqrt((2*Deltap)/ (rho*p_f));
 %   time required to pass through the pipe

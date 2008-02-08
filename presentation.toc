@@ -1,0 +1,14 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {1}{Subject}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Definition}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Methodology}{10}{0}{1}
+\beamer@subsectionintoc {1}{3}{Objectives}{20}{0}{1}
+\beamer@sectionintoc {2}{Mathematical Models}{22}{0}{2}
+\beamer@subsectionintoc {2}{1}{Fluids Mechanic}{22}{0}{2}
+\beamer@subsectionintoc {2}{2}{UV Radiation}{26}{0}{2}
+\beamer@subsectionintoc {2}{3}{Bacteria Concentration}{28}{0}{2}
+\beamer@sectionintoc {3}{Optimization}{31}{0}{3}
+\beamer@subsectionintoc {3}{1}{Problem Formulation}{31}{0}{3}
+\beamer@subsectionintoc {3}{2}{First Approximation}{33}{0}{3}
+\beamer@subsectionintoc {3}{3}{In the Future}{35}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{37}{0}{4}

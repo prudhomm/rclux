@@ -1,0 +1,18 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {1}{RC lux}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{The beginning}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{The steriliser}{8}{0}{1}
+\beamer@sectionintoc {2}{Subject}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Definition}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Methodology}{17}{0}{2}
+\beamer@subsectionintoc {2}{3}{Objectives}{27}{0}{2}
+\beamer@sectionintoc {3}{Mathematical Models}{29}{0}{3}
+\beamer@subsectionintoc {3}{1}{Fluids Mechanic}{29}{0}{3}
+\beamer@subsectionintoc {3}{2}{UV Radiation}{33}{0}{3}
+\beamer@subsectionintoc {3}{3}{Bacteria Concentration}{35}{0}{3}
+\beamer@sectionintoc {4}{Optimisation}{38}{0}{4}
+\beamer@subsectionintoc {4}{1}{Problem Formulation}{38}{0}{4}
+\beamer@subsectionintoc {4}{2}{First Approximation}{40}{0}{4}
+\beamer@subsectionintoc {4}{3}{Second Approximation}{42}{0}{4}
+\beamer@subsectionintoc {4}{4}{In the Future}{44}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{46}{0}{5}

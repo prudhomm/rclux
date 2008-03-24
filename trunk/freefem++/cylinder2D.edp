@@ -1,7 +1,7 @@
 real L1=20*1e-3,L2=118*1e-3,L3=50*1e-3; // the length of the semimajor axis and semiminor axis
 real r1 = 0.002,r2=0.005;
-int inout = 10;
-int inside = 30;
+int inout = 20;
+int inside = 40;
 
 border Gamma1(t=0,L1) { x = t; y = -r1; }
 border Gamma2(t=-r1,-r2) { x = L1; y = t; }

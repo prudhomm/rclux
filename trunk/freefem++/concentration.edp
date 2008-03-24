@@ -1,0 +1,50 @@
+real L1=20*1e-3,L2=118*1e-3,L3=50*1e-3; // the length of the semimajor axis and semiminor axis
+real r1 = 0.004,r2=0.005,T=3, dt=0.05, k=0.000284, I0=40000,alpha = 0.005, rho=1 ;
+int inout = 20;
+int inside = 40;
+func c0 = 1;
+func mu = k*I0*exp(-alpha*rho*(r2-y));
+func u = 0.25*42.4*(r2^2-y^2)/(1.005*L2*1e-6);
+
+border Gamma0(t=0,-r1) { x = L1; y = t; label=0;}
+border Gamma1(t=L1,L1+L2) { x = t; y = -r1; label=1;}
+border Gamma2(t=-r1,0) { x = L1+L2; y = t; label=2;}
+border Gamma3(t=L1+L2,L1) { x =t ; y = 0; label=3;}
+
+//border Gamma0(t=0,-r1) { x = 0; y = t; }
+//border Gamma1(t=0,L1) { x = t; y = -r1; }
+//border Gamma2(t=-r1,-r2) { x = L1; y = t; }
+//border Gamma3(t=L1,L1+L2) { x = t; y = -r2; }
+//border Gamma4(t=-r2,-r1) { x = L1+L2; y = t; }
+//border Gamma5(t=L1+L2,L1+L2+L3) { x = t; y = -r1; }
+//border Gamma6(t=-r1,0) { x = L1+L2+L3; y = t; }
+//border Gamma7(t=L1+L2+L3,0) { x =t ; y = 0; }
+
+
+//border Gamma6(t=-r1,r1) { x = L1+L2+L3; y = t; }
+//border Gamma7(t=L1+L2+L3,L1+L2) { x = t; y = r1; }
+//border Gamma8(t=r1,r2) { x = L1+L2; y = t; }
+//border Gamma9(t=L1+L2,L1) { x = t; y = r2; }
+//border Gamma10(t=r2,r1) { x = L1; y = t; }
+//border Gamma11(t=L1,0) { x = t; y = 0.0020; }
+//border Gamma12(t=r1,-r1) { x = 0; y = t; }
+
+//mesh Th=buildmesh(Gamma1(inout)+Gamma2(inout)+Gamma3(inside)+Gamma4(inout)
+//amma5(inout)+Gamma6(inout)+Gamma7(inout)+Gamma8(inout)
+//amma9(inside)+Gamma10(inout)+Gamma11(inout)+Gamma12(inout));
+//mesh Th=buildmesh(Gamma0(inout)+Gamma1(inout)+Gamma2(inout)+Gamma3(inside)+Gamma4(inout)
+//+Gamma5(inout)+Gamma6(inout)+Gamma7(inout));
+mesh Th=buildmesh(Gamma0(inside)+Gamma1(inside)+Gamma2(inside)+Gamma3(inside));
+plot(Th,wait=true, ps="steriliser2DTh.eps"); // Plot Th
+
+fespace Vh(Th,P1);
+Vh c=c0,v,cold;
+problem concentration(c,v)= int2d(Th)((1/dt+mu)*c*v + u*dx(c)* v)
+- int2d(Th)(cold*v/dt) + on(0,c=c0)+on(1,3,c=0.1);//on(2,10,c=c0)+ on(1,5,6,7,11,12,c=0);
+//ofstream ff("thermic.dat");
+for(real t=0;t<T;t+=dt){
+cold=c; // uold  un..1 = un u
+concentration; // here solve the thermic problem
+//ff<<u(3,0.5)<<endl;
+plot(c,value=true,fill=true);
+}
